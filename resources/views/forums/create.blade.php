@@ -1,0 +1,77 @@
+<x-geust>
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="border border-slate-400 shadow-lg rounded-lg p-8 w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-6 text-center">Forum</h2>
+
+            <form action="{{ route('forum.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+                @csrf
+
+                {{-- Forum --}}
+                <div>
+                    <label for="heading" class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                    <input
+                        type="text"
+                        name="title"
+                        id="title"
+                        value=""
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                    @error('title')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div>
+                    <label for="heading" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                    <textarea
+                        type="text"
+                        name="description"
+                        id="description"
+                        cols="30" rows="3"
+                        class="w-full border border-gray-300 rounded-2xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    ></textarea>
+                    @error('description')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div>
+                    <select name="category" id="category" class="w-full border border-slate-400 text-center rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option disabled selected>Select Category</option>
+                        @foreach(\App\Enum\CategoryEnum::cases() as $category)
+                        <option value="{{ $category->value }}" @selected(old('$category') === $category->value)>
+                            {{ $category->labels() }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @error('category')
+                    <div class="text-red-600">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                {{-- Image --}}
+                <div>
+                    <label for="hero_image" class="block text-sm font-medium text-gray-700 mb-1">Image</label>
+                    <input
+                        type="file"
+                        name="image"
+                        id="image"
+                        class="w-full"
+                    >
+                    @error('image')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                {{-- Submit Button --}}
+                <div class="text-center">
+                    <button
+                        type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        Create Post
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</x-geust>
