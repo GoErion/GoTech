@@ -10,13 +10,13 @@
             </div>
         </div>
         <div class="mx-auto mt-4 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
-            <dl class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+            <dl class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
                 @foreach($services as $service)
-                <div class="relative pl-9 border border-slate-400 rounded-2xl p-8">
+                <div class="relative min-h-47.25 pl-9 border border-slate-400 rounded-2xl p-4">
                     <dt class="inline text-slate-600">
                         {{ $service->subtitle }}.
                     </dt>
-                    <dd class="inline">{{ $service->description }}</dd>
+                    <dd class="inline wrap-anywhere text-pretty">{{ $service->description }}</dd>
                 </div>
                     @endforeach
             </dl>
