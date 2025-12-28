@@ -20,6 +20,6 @@ final class ServiceController extends Controller
 
         $service = $action->handle($validated);
 
-        return redirect()->back()->with('services_created','successfully created service');
+        return redirect()->route('home')->with('services_created','successfully created service');
     }
 }

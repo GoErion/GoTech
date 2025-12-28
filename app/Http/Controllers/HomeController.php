@@ -15,8 +15,8 @@ final class HomeController extends Controller
     {
         $hero = Hero::first();
         $services = Service::all();
-        $posts = Forum::all();
+        $forums = Forum::all();
 
-        return view('welcome',compact('hero','services','posts'));
+        return view('welcome',compact('hero','services','forums'));
     }
 }

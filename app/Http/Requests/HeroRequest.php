@@ -23,7 +23,7 @@ class HeroRequest extends FormRequest
     {
         return [
             'heading'=>['required','string'],
-            'hero_image'=>['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:2048']
+            'hero_image'=>['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:6048']
         ];
     }
 }

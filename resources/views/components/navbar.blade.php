@@ -2,7 +2,7 @@
         <header class="absolute inset-x-0 top-0 z-50">
             <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
                 <div class="flex lg:flex-1">
-                    <a href="{{-- route('home') --}}" class="-m-1.5 p-1.5">
+                    <a href="{{ route('home') }}" class="-m-1.5 p-1.5">
                         <span class="sr-only">{{ config('app.name') }}</span>
                         <img src="{{ asset('img/erion.png') }}" alt="" class="h-32 w-auto rounded ps-4 lg:ps-12" />
                     </a>
@@ -19,10 +19,10 @@
                     <a href="{{-- route('product.index') --}}" class="">
                         Product
                     </a>
-                    <a href="{{-- route('forum.index') --}}" class="">
+                    <a href="{{ route('forum.create') }}" class="">
                         Forum
                     </a>
-                    <a href="{{-- route('service.index') --}}" class="">
+                    <a href="{{ route('services.create') }}" class="">
                         Services
                     </a>
                     <a href="{{-- route('support.index') --}}" class="">
@@ -50,7 +50,7 @@
                     <div tabindex="0" class="fixed inset-0 focus:outline-none">
                         <el-dialog-panel class="fixed right-0 z-50 w-full overflow-y-auto bg-slate-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-slate-100/10">
                             <div class="flex items-center justify-between">
-                                <a href="{{-- route('home') --}}" class="-m-1.5 p-1.5">
+                                <a href="{{ route('home') }}" class="-m-1.5 p-1.5">
                                     <span class="sr-only">{{ config('app.name') }}</span>
                                     <img src="{{ asset('img/erion.png') }}" alt="" class="h-10 w-auto" />
                                 </a>
@@ -67,10 +67,10 @@
                                         <a href="{{-- route('product.index') --}}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">
                                             Product
                                         </a>
-                                        <a href="{{-- route('forum.index') --}}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">
+                                        <a href="{{ route('forum.create') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">
                                             Forum
                                         </a>
-                                        <a href="{{-- route('service.index') --}}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">
+                                        <a href="{{ route('services.create') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">
                                             Services
                                         </a>
                                         <a href="{{-- route('support.index') --}}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">

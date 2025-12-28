@@ -8,7 +8,7 @@ use App\Enum\CategoryEnum;
 use App\Http\Requests\ForumRequest;
 use Illuminate\Http\Request;
 
-class ForumController extends Controller
+final class ForumController extends Controller
 {
     public function create()
     {
@@ -28,6 +28,6 @@ class ForumController extends Controller
         }
         $forum = $action->handle($validated);
 
-        return redirect()->back()->with('success', 'Forum created!');
+        return redirect()->route('home')->with('success', 'Forum created!');
     }
 }

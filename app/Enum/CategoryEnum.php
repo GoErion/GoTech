@@ -10,7 +10,7 @@ enum CategoryEnum: string
     case Tutorial = 'Tutorial';
     case Support = 'Support';
 
-    public function labels(): array|string|null
+    public function labels(): string
     {
         return match ($this)
         {

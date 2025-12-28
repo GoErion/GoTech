@@ -27,7 +27,7 @@ final class HeroController extends Controller
         $action->handle($validated);
 
         return redirect()
-            ->back()
+            ->route('home')
             ->with('success', 'Hero Successfully Updated');
     }
 

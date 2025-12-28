@@ -28,7 +28,7 @@ class ForumRequest extends FormRequest
         return [
             'title' => ['required', 'string','min:3', 'max:20'],
             'description' => ['required', 'string'],
-            'image' => ['required','image', 'mimes:jpeg,jpg,png', 'max:2048'],
+            'image' => ['required','image', 'mimes:jpeg,jpg,png', 'max:6000'],
             'category' => ['required',new Enum(CategoryEnum::class)],
         ];
     }
