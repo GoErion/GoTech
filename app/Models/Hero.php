@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @method static create(array $array)
@@ -11,7 +12,13 @@ use Illuminate\Database\Eloquent\Model;
 class Hero extends Model
 {
     protected $fillable = [
+        'user_id',
         'heading',
         'hero_image',
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

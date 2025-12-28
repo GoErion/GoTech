@@ -1,18 +1,6 @@
-<x-geust>
-    <div class="">
-        <x-hero :hero="$hero" />
-    </div>
-    <div>
-        <x-services :services="$services"/>
-    </div>
-
-    <div>
-        <x-forums :forums="$forums"/>
-    </div>
-
-    <!-- Testimonial section -->
+<div>
     <div class="relative z-10 mt-12  pb-20 sm:mt-56 sm:pb-24 xl:pb-0">
-        <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute inset-0 overflow-hidden rounded-2xl" aria-hidden="true">
             <div class="absolute top-[calc(50%-36rem)] left-[calc(50%-19rem)] transform-gpu blur-3xl">
                 <div class="aspect-1097/1023 w-274.25 bg-linear-to-r from-[#ff4694] to-[#776fff] opacity-25" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
             </div>
@@ -40,29 +28,4 @@
             </div>
         </div>
     </div>
-
-    <div class="py-16 sm:py-24">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="relative isolate overflow-hidden border border-slate-400 bg-transparent px-6 py-24 shadow-2xl rounded-3xl sm:px-24 xl:py-32">
-                <h2 class="mx-auto max-w-3xl text-center text-4xl tracking-tight sm:text-5xl">Get notified when we’re launching</h2>
-                <p class="mx-auto mt-6 max-w-lg text-center text-lg text-gray-300">Reprehenderit ad esse et non officia in nulla. Id proident tempor incididunt nostrud nulla et culpa.</p>
-                <form class="mx-auto mt-10 flex max-w-md gap-x-4">
-                    <label for="email-address" class="sr-only">Email address</label>
-                    <input id="email-address" name="email" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-white sm:text-sm/6" placeholder="Enter your email">
-                    <button type="submit" class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Notify me</button>
-                </form>
-                <svg viewBox="0 0 1024 1024" class="absolute top-1/2 left-1/2 -z-10 size-256 -translate-x-1/2" aria-hidden="true">
-                    <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7" />
-                    <defs>
-                        <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(512 512) rotate(90) scale(512)">
-                            <stop stop-color="#7775D6" />
-                            <stop offset="1" stop-color="#E935C1" stop-opacity="0" />
-                        </radialGradient>
-                    </defs>
-                </svg>
-            </div>
-        </div>
-    </div>
-
-
-</x-geust>
+</div>

@@ -1,6 +1,6 @@
-<x-geust>
+<x-guest>
     <div class="flex items-center justify-center min-h-screen">
-        <div class="border border-slate-400 shadow-lg rounded-lg p-8 w-full max-w-md">
+        <div class="border border-slate-900 shadow-lg rounded-2xl p-8 w-full max-w-md">
             <h2 class="text-2xl font-bold mb-6 text-center">Create Service</h2>
 
             <form action="{{ route('services.store') }}" method="POST" class="space-y-4">
@@ -14,7 +14,7 @@
                         name="subtitle"
                         id="subtitle"
                         value=""
-                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="w-full border rounded-md px-3 py-2 @error('subtitle') border-red-500 @enderror focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                     >
                     @error('subtitle')
@@ -28,7 +28,7 @@
                         name="description"
                         id="description"
                         value=""
-                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="w-full border rounded-md px-3 py-2 @error('description') border-red-500 @enderror focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                     >
                     @error('description')
@@ -50,4 +50,4 @@
         </div>
     </div>
 
-</x-geust>
+</x-guest>

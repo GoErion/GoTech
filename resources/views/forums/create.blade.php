@@ -1,6 +1,6 @@
-<x-geust>
+<x-guest>
     <div class="flex items-center justify-center min-h-screen">
-        <div class="border border-slate-400 shadow-lg rounded-lg p-8 w-full max-w-md">
+        <div class="border border-slate-900 shadow-lg rounded-2xl p-8 w-full max-w-md mt-20">
             <h2 class="text-2xl font-bold mb-6 text-center">Forum</h2>
 
             <form action="{{ route('forum.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
@@ -14,27 +14,27 @@
                         name="title"
                         id="title"
                         value=""
-                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 @error('title') border-red-500 @enderror"
                     >
                     @error('title')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
                 </div>
                 <div>
-                    <label for="heading" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                    <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
                     <textarea
                         type="text"
                         name="description"
                         id="description"
                         cols="30" rows="3"
-                        class="w-full border border-gray-300 rounded-2xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="w-full border rounded-2xl px-3 py-2 @error('description') border-red-500 @enderror focus:outline-none focus:ring-2 focus:ring-blue-500"
                     ></textarea>
                     @error('description')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
                 </div>
                 <div>
-                    <select name="category" id="category" class="w-full border border-slate-400 text-center rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <select name="category" id="category" class="w-full border text-center rounded-lg px-3 py-2 @error('category') border-red-500 @enderror focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option disabled selected>Select Category</option>
                         @foreach(\App\Enum\CategoryEnum::cases() as $category)
                         <option value="{{ $category->value }}" @selected(old('$category') === $category->value)>
@@ -54,7 +54,7 @@
                         type="file"
                         name="image"
                         id="image"
-                        class="w-full"
+                        class="w-full @error('image') border-red-500 @enderror"
                     >
                     @error('image')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -74,4 +74,4 @@
         </div>
     </div>
 
-</x-geust>
+</x-guest>

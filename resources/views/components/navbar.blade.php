@@ -30,17 +30,17 @@
                     </a>
                 </div>
                 @auth
-                    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <form action="{{-- route('logout') --}}" method="post">
+                    <div class="hidden lg:flex lg:flex-1 lg:justify-end pe-12">
+                        <form action="{{ route('logout') }}" method="post">
                             @csrf
-                            <button>
+                            <button class="border border-slate-400 py-2 px-4 rounded-lg">
                                 Logout
                             </button>
                         </form>
                     </div>
                 @else
                     <div class="hidden lg:flex lg:flex-1 lg:justify-end pe-12">
-                        <a href="#" class="bg-conic-180 from-indigo-600 via-indigo-50 to-indigo-600 rounded-xl py-2 px-4 text-slate-900">Get Started<span aria-hidden="true"></span></a>
+                        <a href="{{ route('login') }}" class="bg-conic-180 from-indigo-600 via-indigo-50 to-indigo-600 rounded-xl py-2 px-4 text-slate-900">Get Started<span aria-hidden="true"></span></a>
                     </div>
                 @endauth
 
@@ -79,16 +79,16 @@
                                     </div>
                                     @auth
                                         <div class="py-6">
-                                            <form action="{{-- route('logout') --}}" method="post">
+                                            <form action="{{ route('logout') }}" method="post">
                                                 @csrf
-                                                <button>
+                                                <button class="border border-slate-400 py-2 px-4 text-slate-400 rounded-lg">
                                                     LOGOUT
                                                 </button>
                                             </form>
                                         </div>
                                     @else
                                         <div class="py-6">
-                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-slate-400 hover:bg-white/5">Get Started</a>
+                                            <a href="{{ route('login') }}" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-slate-400 hover:bg-white/5">Get Started</a>
                                         </div>
                                     @endauth
                                 </div>

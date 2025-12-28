@@ -17,8 +17,12 @@
 
     </head>
     <body class="bg-slate-950 text-slate-400 flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col font-bold font-sans antialiased" style="background-image: url({{ asset('img/dots.svg') }})">
+    <div class="container mx-auto mt-2">
+        <x-navbar/>
         <main class="">
             {{ $slot }}
         </main>
+        <x-footer/>
+    </div>
     </body>
 </html>

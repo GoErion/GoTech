@@ -1,6 +1,6 @@
-<x-geust>
+<x-guest>
     <div class="flex items-center justify-center min-h-screen">
-        <div class="border border-slate-400 shadow-lg rounded-lg p-8 w-full max-w-md">
+        <div class="border border-slate-900 shadow-lg rounded-2xl p-8 w-full max-w-md">
             <h2 class="text-2xl font-bold mb-6 text-center">Create / Update Hero</h2>
 
             <form action="{{ route('hero.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
@@ -14,7 +14,7 @@
                         name="heading"
                         id="heading"
                         value="{{ old('heading', $hero->heading ?? '') }}"
-                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="w-full border rounded-md px-3 py-2 @error('heading') border-red-500 @enderror focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                     >
                     @error('heading')
@@ -29,7 +29,7 @@
                         type="file"
                         name="hero_image"
                         id="hero_image"
-                        class="w-full"
+                        class="w-full @error('hero_image') border-red-500 @enderror"
                     >
                     @if(!empty($hero?->hero_image))
                         <p class="mt-2 text-sm text-gray-500">Current Image:</p>
@@ -53,4 +53,4 @@
         </div>
     </div>
 
-</x-geust>
+</x-guest>

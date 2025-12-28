@@ -17,6 +17,6 @@ final class HomeController extends Controller
         $services = Service::all();
         $forums = Forum::all();
 
-        return view('welcome',compact('hero','services','forums'));
+        return view('home',compact('hero','services','forums'));
     }
 }

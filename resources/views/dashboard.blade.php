@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div>
-                <form action="" method="post">
+                <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <div class="flex">
                         <button type="submit" class="border border-slate-400 rounded-lg py-2 px-4 mb-6">logout</button>

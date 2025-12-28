@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('heroes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('heading');
             $table->string('hero_image')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -11,6 +11,7 @@ final readonly class ForumAction
     public function handle($data)
     {
         return Forum::create([
+            'user_id'=> auth()->id(),
             'title' => $data['title'],
             'description' => $data['description'],
             'image' => $data['image'],

@@ -11,6 +11,7 @@ final readonly class ServiceAction
     public function handle($data)
     {
         return Service::create([
+            'user_id'=> auth()->id(),
             'subtitle' => $data['subtitle'],
             'description' => $data['description'],
         ]);

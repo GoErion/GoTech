@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('subtitle');
             $table->string('description');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

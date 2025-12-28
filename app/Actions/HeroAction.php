@@ -28,6 +28,7 @@ final readonly class HeroAction
         } else {
             // Create new hero
             $hero = Hero::create([
+                'user_id'=> auth()->id(),
                 'heading' => $data['heading'],
                 'hero_image' => $data['hero_image'] ?? null,
             ]);

@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('forums', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->text('description');
             $table->string('image');
             $table->string('category',20)->default('marketing');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
