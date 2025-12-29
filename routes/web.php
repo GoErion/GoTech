@@ -11,7 +11,7 @@ Route::get('/', [HomeController::class, 'index'])
     ->name('home');
 
 Route::get('/dashboard', [ProfileController::class,'edit'])
-    ->name('d')
+    ->name('dashboard')
     ->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
@@ -21,13 +21,19 @@ Route::middleware('auth')->group(function () {
     Route::post('hero', [HeroController::class, 'heroStore'])
         ->name('hero.store');
 
-    Route::get('services', [ServiceController::class, 'create'])
+    Route::get('services', [ServiceController::class, 'index'])
+        ->name('services');
+
+    Route::get('services/create', [ServiceController::class, 'create'])
         ->name('services.create');
 
     Route::post('services', [ServiceController::class, 'serviceStore'])
         ->name('services.store');
 
-    Route::get('forum', [ForumController::class, 'create'])
+    Route::get('forum', [ForumController::class, 'index'])
+        ->name('forum');
+
+    Route::get('forum/create', [ForumController::class, 'create'])
         ->name('forum.create');
 
     Route::post('forum', [ForumController::class, 'forumStore'])

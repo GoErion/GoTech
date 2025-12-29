@@ -6,10 +6,17 @@ namespace App\Http\Controllers;
 use App\Actions\ForumAction;
 use App\Enum\CategoryEnum;
 use App\Http\Requests\ForumRequest;
+use App\Models\Forum;
 use Illuminate\Http\Request;
 
 final class ForumController extends Controller
 {
+    public function index()
+    {
+        $forums = Forum::all();
+
+        return view('forums.index',compact('forums'));
+    }
     public function create()
     {
         return view('forums.create');
@@ -30,4 +37,5 @@ final class ForumController extends Controller
 
         return redirect()->route('home')->with('success', 'Forum created!');
     }
+
 }

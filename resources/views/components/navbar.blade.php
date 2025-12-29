@@ -19,10 +19,10 @@
                     <a href="{{-- route('product.index') --}}" class="">
                         Product
                     </a>
-                    <a href="{{ route('forum.create') }}" class="">
+                    <a href="{{ route('forum') }}" class="">
                         Forum
                     </a>
-                    <a href="{{ route('services.create') }}" class="">
+                    <a href="{{ route('services') }}" class="">
                         Services
                     </a>
                     <a href="{{-- route('support.index') --}}" class="">
@@ -67,10 +67,10 @@
                                         <a href="{{-- route('product.index') --}}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">
                                             Product
                                         </a>
-                                        <a href="{{ route('forum.create') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">
+                                        <a href="{{ route('forum') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">
                                             Forum
                                         </a>
-                                        <a href="{{ route('services.create') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">
+                                        <a href="{{ route('services') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">
                                             Services
                                         </a>
                                         <a href="{{-- route('support.index') --}}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-400 hover:bg-white/5">

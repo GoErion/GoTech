@@ -9,7 +9,9 @@
     </div>
 {{--    forum--}}
     <div>
-        <x-forums :forums="$forums"/>
+        <div class="mt-12">
+            <x-forums :forums="$forums"/>
+        </div>
     </div>
 {{--    <!-- Testimonial section -->--}}
     <div>

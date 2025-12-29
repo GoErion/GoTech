@@ -1,7 +1,7 @@
 @props(['forums'])
 
 <div>
-    <div class="py-24 sm:py-32">
+    <div class="">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <!-- Header -->
             <div class="mx-auto max-w-2xl text-center">

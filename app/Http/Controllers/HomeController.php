@@ -15,8 +15,12 @@ final class HomeController extends Controller
     public function index()
     {
         $hero = Hero::first();
-        $services = Service::all();
-        $forums = Forum::all();
+
+        // Get 3 random services
+        $services = Service::inRandomOrder()->take(3)->get();
+
+        // Get 3 random forums
+        $forums = Forum::inRandomOrder()->take(3)->get();
 
         return view('home',compact('hero','services','forums'));
     }

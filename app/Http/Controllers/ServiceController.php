@@ -6,10 +6,17 @@ namespace App\Http\Controllers;
 
 use App\Actions\ServiceAction;
 use App\Http\Requests\ServiceRequest;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 final class ServiceController extends Controller
 {
+    public function index()
+    {
+        $services = Service::all();
+
+        return view('services.index',compact('services'));
+    }
     public function create()
     {
         return view('services.create');
@@ -22,4 +29,5 @@ final class ServiceController extends Controller
 
         return redirect()->route('home')->with('services_created','successfully created service');
     }
+
 }

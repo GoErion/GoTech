@@ -3,13 +3,15 @@
         Home
     </x-slot>
     <div class="flex w-full min-h-screen gap-5 mt-26">
+
+{{--        sidebar--}}
         <div class="hidden md:block md:w-1/5 border border-slate-900 rounded-2xl p-4">
             <x-sidebar/>
         </div>
+
+{{--        main content--}}
         <div class="w-full md:w-4/5 md:p-4">
-            <x-content>
-                <x-profile-edit :user="$user"/>
-            </x-content>
+            {{ $slot }}
         </div>
     </div>
 </x-app>
