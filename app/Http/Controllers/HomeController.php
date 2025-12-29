@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\Forum;
 use App\Models\Hero;
 use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 final class HomeController extends Controller
@@ -18,5 +19,10 @@ final class HomeController extends Controller
         $forums = Forum::all();
 
         return view('home',compact('hero','services','forums'));
+    }
+
+    public function dashboard()
+    {
+        return view('dashboard');
     }
 }

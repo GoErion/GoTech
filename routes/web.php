@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [ProfileController::class,'edit'])
+    ->name('d')
+    ->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('hero', [HeroController::class, 'create'])
