@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enum\CategoryEnum;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Webpatser\LaravelUuid\HasUuids;
 
 /**
  * @method static create(array $array)
@@ -13,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Forum extends Model
 {
+    use HasUuids;
     protected $fillable = [
         'user_id',
         'title',

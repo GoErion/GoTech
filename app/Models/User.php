@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Webpatser\LaravelUuid\HasUuids;
 
 /**
  * @method static create(array $array)
@@ -13,6 +14,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasUuids;
 
     protected $fillable = [
         'name',
