@@ -4,8 +4,10 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Actions\ForumAction;
+use App\Actions\UpdateForumAction;
 use App\Enum\CategoryEnum;
 use App\Http\Requests\ForumRequest;
+use App\Http\Requests\UpdateForumRequest;
 use App\Models\Forum;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -47,9 +49,25 @@ final class ForumController extends Controller
         return view('forums.edit',compact('forum'));
     }
 
-    public function update(Request $request,Forum $forum)
+    public function update(UpdateForumRequest $request,Forum $forum,UpdateForumAction $action)
     {
-        dd($request->all());
+        $validated = $request->validated();
+
+        if ($request->hasFile('image'))
+        {
+            //delete old image
+            if ($forum->image)
+            {
+                Storage::disk('public')->delete($forum->image);
+            }
+            //store  new one
+            $validated['image'] = $request->file('image')->store('images','public');
+        }
+
+        $forum = $action->handle($forum,$validated);
+
+        return redirect()->route('forum')->with('success','Forum successfully updated!');
+
     }
 
     public function destroy(Forum $forum)
