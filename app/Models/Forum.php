@@ -14,7 +14,6 @@ use Webpatser\LaravelUuid\HasUuids;
  */
 class Forum extends Model
 {
-    use HasUuids;
     protected $fillable = [
         'user_id',
         'title',

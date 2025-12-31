@@ -14,7 +14,6 @@ use Webpatser\LaravelUuid\HasUuids;
 class User extends Authenticatable
 {
     use Notifiable;
-    use HasUuids;
 
     protected $fillable = [
         'name',

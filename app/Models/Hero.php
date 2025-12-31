@@ -12,7 +12,6 @@ use Webpatser\LaravelUuid\HasUuids;
  */
 class Hero extends Model
 {
-    use HasUuids;
     protected $fillable = [
         'user_id',
         'heading',
