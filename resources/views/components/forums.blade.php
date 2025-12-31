@@ -50,8 +50,8 @@
                                 <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5"
                                      class="size-10 rounded-full bg-gray-100" alt="">
                                 <div class="text-sm">
-                                    <p class="font-semibold text-slate-700">GoErion</p>
-                                    <p class="text-gray-600">Co-Founder / CTO</p>
+                                    <p class="font-semibold text-slate-700">{{ $forum->user->name }}</p>
+                                    <p class="text-gray-600">Co-Founder / {{ config('app.name') }}</p>
                                 </div>
                             </div>
                         </div>
