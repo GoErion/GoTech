@@ -14,6 +14,8 @@ final class HomeController extends Controller
 {
     public function index()
     {
+        $users = User::all();
+
         $hero = Hero::first();
 
         // Get 3 random services
@@ -22,7 +24,7 @@ final class HomeController extends Controller
         // Get 3 random forums
         $forums = Forum::inRandomOrder()->take(3)->get();
 
-        return view('home',compact('hero','services','forums'));
+        return view('home',compact('users','hero','services','forums'));
     }
 
     public function dashboard()

@@ -1,4 +1,5 @@
-<x-guest>
+<x-dashboard>
+    <x-content>
     <div class="flex items-center justify-center min-h-screen">
         <div class="border border-slate-900 shadow-lg rounded-2xl p-8 w-full max-w-md">
             <h2 class="text-2xl font-bold mb-6 text-center">Create Service</h2>
@@ -23,14 +24,7 @@
                 </div>
                 <div>
                     <label for="heading" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
-                    <input
-                        type="text"
-                        name="description"
-                        id="description"
-                        value=""
-                        class="w-full border rounded-md px-3 py-2 @error('description') border-red-500 @enderror focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        required
-                    >
+                    <textarea name="description" id="description" cols="30" rows="3" class="w-full border rounded-2xl px-3 py-2 @error('description') border-red-500 @enderror focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                     @error('description')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -49,5 +43,5 @@
             </form>
         </div>
     </div>
-
-</x-guest>
+    </x-content>
+</x-dashboard>

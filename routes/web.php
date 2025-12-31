@@ -39,6 +39,19 @@ Route::middleware('auth')->group(function () {
     Route::post('forum', [ForumController::class, 'forumStore'])
         ->name('forum.store');
 
+    Route::get('forum/{forum}', [ForumController::class, 'show'])
+        ->name('forum.show');
+
+    Route::get('forum/{forum}/edit', [ForumController::class, 'edit'])
+        ->name('forum.edit');
+
+    Route::put('forum/{forum}', [ForumController::class, 'update'])
+        ->name('forum.update');
+
+    Route::delete('forum/{forum}', [ForumController::class, 'destroy'])
+        ->name('forum.destroy');
+
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

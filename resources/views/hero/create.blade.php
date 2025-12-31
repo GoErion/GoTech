@@ -1,4 +1,5 @@
-<x-guest>
+<x-dashboard>
+    <x-content>
     <div class="flex items-center justify-center min-h-screen">
         <div class="border border-slate-900 shadow-lg rounded-2xl p-8 w-full max-w-md">
             <h2 class="text-2xl font-bold mb-6 text-center">Create / Update Hero</h2>
@@ -52,5 +53,5 @@
             </form>
         </div>
     </div>
-
-</x-guest>
+    </x-content>
+</x-dashboard>

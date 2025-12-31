@@ -2,10 +2,10 @@
     <x-slot name="title">
         Home
     </x-slot>
-    <div class="flex w-full min-h-screen gap-5 mt-26">
+    <div class="flex w-full gap-5 mt-26">
 
 {{--        sidebar--}}
-        <div class="hidden md:block md:w-1/5 border border-slate-900 rounded-2xl p-4">
+        <div class="hidden md:block md:w-1/5">
             <x-sidebar/>
         </div>
 

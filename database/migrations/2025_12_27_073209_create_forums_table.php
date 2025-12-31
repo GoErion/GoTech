@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('category',20)->default('marketing');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

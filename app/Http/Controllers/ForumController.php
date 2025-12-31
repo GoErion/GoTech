@@ -8,6 +8,7 @@ use App\Enum\CategoryEnum;
 use App\Http\Requests\ForumRequest;
 use App\Models\Forum;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 final class ForumController extends Controller
 {
@@ -35,7 +36,32 @@ final class ForumController extends Controller
         }
         $forum = $action->handle($validated);
 
-        return redirect()->route('home')->with('success', 'Forum created!');
+        return redirect()->route('forum')->with('success', 'Forum created!');
+    }
+    public function show(Forum $forum)
+    {
+        return view('forums.show',compact('forum'));
+    }
+    public function edit(Forum $forum)
+    {
+        return view('forums.edit',compact('forum'));
+    }
+
+    public function update(Request $request,Forum $forum)
+    {
+        dd($request->all());
+    }
+
+    public function destroy(Forum $forum)
+    {
+        //delete image
+        if ($forum->image)
+        {
+            Storage::disk('public')->delete($forum->image);
+        }
+        $forum->delete();
+
+        return redirect()->route('forum')->with('success','Forum deleted successfully');
     }
 
 }

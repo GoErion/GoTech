@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * @method static create(array $array)
  * @method static inRandomOrder()
+ * @property mixed $image
  */
 class Forum extends Model
 {
