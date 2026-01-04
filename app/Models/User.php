@@ -10,6 +10,7 @@ use Webpatser\LaravelUuid\HasUuids;
 
 /**
  * @method static create(array $array)
+ * @property mixed $id
  */
 class User extends Authenticatable
 {

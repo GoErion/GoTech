@@ -2,20 +2,24 @@
     <x-content>
         <div>
             <div class="flex justify-end me-26 mb-4 space-x-4">
-               <div class="border border-slate-800 py-2 px-3 rounded-lg">
-                   <a href="{{ route('forum.edit',$forum->id) }}" class="inline-flex">
-                       Edit
-                   </a>
-               </div>
-                <div class="border border-slate-800 py-2 px-3 rounded-lg">
-                    <form action="{{ route('forum.destroy',$forum->id) }}" method="post" class="inline-flex">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">
-                            Delete
-                        </button>
-                    </form>
-                </div>
+              @can('update', $forum)
+                    <div class="border border-slate-800 py-2 px-3 rounded-lg">
+                        <a href="{{ route('forum.edit',$forum->id) }}" class="inline-flex">
+                            Edit
+                        </a>
+                    </div>
+              @endcan
+                @can('delete', $forum)
+                      <div class="border border-slate-800 py-2 px-3 rounded-lg">
+                          <form action="{{ route('forum.destroy',$forum->id) }}" method="post" class="inline-flex">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit">
+                                  Delete
+                              </button>
+                          </form>
+                      </div>
+                @endcan
             </div>
             <div class="flex justify-center">
                 <article class="relative flex flex-col items-start justify-between group">

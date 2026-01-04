@@ -11,6 +11,7 @@ use Webpatser\LaravelUuid\HasUuids;
  * @method static create(array $array)
  * @method static inRandomOrder()
  * @property mixed $image
+ * @property mixed $user_id
  */
 class Forum extends Model
 {

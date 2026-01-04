@@ -12,6 +12,9 @@ use App\Models\Forum;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * @method authorize(string $string, Forum $forum)
+ */
 final class ForumController extends Controller
 {
     public function index()
@@ -46,11 +49,15 @@ final class ForumController extends Controller
     }
     public function edit(Forum $forum)
     {
+        $this->authorize('update',$forum);
+
         return view('forums.edit',compact('forum'));
     }
 
     public function update(UpdateForumRequest $request,Forum $forum,UpdateForumAction $action)
     {
+        $this->authorize('update',$forum);
+
         $validated = $request->validated();
 
         if ($request->hasFile('image'))
@@ -72,6 +79,8 @@ final class ForumController extends Controller
 
     public function destroy(Forum $forum)
     {
+        $this->authorize('delete',$forum);
+
         //delete image
         if ($forum->image)
         {
