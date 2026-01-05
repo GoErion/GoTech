@@ -1,10 +1,10 @@
     <div>
-        <header class="absolute inset-x-0 top-0 z-50">
-            <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+        <header class="fixed md:absolute inset-x-0 top-0 z-50">
+            <nav aria-label="Global" class="flex items-center justify-between p-4 lg:px-8">
                 <div class="flex lg:flex-1">
                     <a href="{{ route('home') }}" class="-m-1.5 p-1.5">
                         <span class="sr-only">{{ config('app.name') }}</span>
-                        <img src="{{ asset('img/erion.png') }}" alt="" class="h-32 w-auto rounded ps-4 lg:ps-12" />
+                        <img src="{{ asset('img/erion.png') }}" alt="" class="h-20 md:h-32 w-auto rounded ps-4 lg:ps-12" />
                     </a>
                 </div>
                 <div class="flex lg:hidden">
