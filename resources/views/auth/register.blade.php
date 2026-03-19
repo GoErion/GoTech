@@ -9,28 +9,28 @@
                 <h5 class="text-xl font-bold font-sans">Register to {{ config('app.name') }}</h5>
                 <div>
                     <label for="name" class="block mb-2 font-bold">{{ __('Username') }}</label>
-                    <input type="text" name="name" id="name" class="bg-transparent border rounded-lg focus:ring-pink-500 focus:border-pink-500 @error('name') border-red-500 @enderror block w-full p-2.5 dark:placeholder-slate-400" placeholder="username"/>
+                    <input type="text" name="name" id="name" class="bg-transparent border rounded-lg focus:ring-pink-500 focus:border-pink-500 @error('name') border-red-500 @enderror block w-full p-2.5 dark:placeholder-slate-400" placeholder=""/>
                     @error('name')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
                     <label for="email" class="block mb-2 font-bold">{{ __('Email') }}</label>
-                    <input type="email" name="email" id="email" class="bg-transparent border rounded-lg focus:ring-pink-500 focus:border-pink-500 @error('email') border-red-500 @enderror block w-full p-2.5 dark:placeholder-slate-400" placeholder="goerion@goerion.com"/>
+                    <input type="email" name="email" id="email" class="bg-transparent border rounded-lg focus:ring-pink-500 focus:border-pink-500 @error('email') border-red-500 @enderror block w-full p-2.5 dark:placeholder-slate-400" placeholder=""/>
                     @error('email')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
                     <label for="password" class="block mb-2 font-bold">{{ __('Password') }}</label>
-                    <input type="password" name="password" id="password" placeholder="************" class="bg-transparent border rounded-lg focus:ring-pink-500 focus:border-pink-500 @error('password') border-red-500 @enderror block w-full p-2.5 dark:placeholder-slate-400"/>
+                    <input type="password" name="password" id="password" placeholder="" class="bg-transparent border rounded-lg focus:ring-pink-500 focus:border-pink-500 @error('password') border-red-500 @enderror block w-full p-2.5 dark:placeholder-slate-400"/>
                     @error('password')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
                     <label for="password" class="block mb-2 font-medium">{{__('Confirm Password')}}</label>
-                    <input type="password" name="password_confirmation" id="password_confirm" placeholder="************" class="bg-transparent border rounded-lg focus:ring-pink-500 focus:border-pink-500 @error('password_confirm') border-red-500 @enderror block w-full p-2.5 dark:placeholder-slate-400"/>
+                    <input type="password" name="password_confirmation" id="password_confirm" placeholder="" class="bg-transparent border rounded-lg focus:ring-pink-500 focus:border-pink-500 @error('password_confirm') border-red-500 @enderror block w-full p-2.5 dark:placeholder-slate-400"/>
                     @error('password_confirm')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror

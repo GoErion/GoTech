@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Actions\ForumAction;
 use App\Actions\UpdateForumAction;
 use App\Enum\CategoryEnum;
+use App\Events\ForumCreated;
 use App\Http\Requests\ForumRequest;
 use App\Http\Requests\UpdateForumRequest;
 use App\Models\Forum;
@@ -29,6 +30,7 @@ final class ForumController extends Controller
     }
     public function forumStore(ForumRequest $request,ForumAction $action)
     {
+        event(new ForumCreated());
         $validated = $request->validated();
 
         if ($request->hasFile('image'))
