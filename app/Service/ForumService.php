@@ -6,10 +6,8 @@ namespace App\Service;
 
 use App\DTOs\ForumDTO;
 use App\Enum\CategoryEnum;
-use App\Models\Forum;
-use Illuminate\Http\UploadedFile;
 
-class ForumService
+final class ForumService
 {
     public function forumArray(ForumDTO $dto): array
     {

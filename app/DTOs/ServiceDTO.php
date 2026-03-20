@@ -1,14 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DTOs;
 
-class ServiceDTO
+readonly class ServiceDTO
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
+    public function __construct(
+        public int $user_id,
+        public string $subtitle,
+        public string $description
+    )
     {
-        //
+    }
+
+    public static function fromRequest(array $request): self
+    {
+        return new self(
+            user_id: auth()->user()->id,
+            subtitle: $request['subtitle'],
+            description: $request['description']
+        );
     }
 }

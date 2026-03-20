@@ -1,14 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DTOs;
 
-class HeroDTO
+readonly class HeroDTO
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
+    public function __construct(
+        public int $user_id,
+        public string $heading,
+        public string $hero_image,
+    )
     {
-        //
+    }
+
+    public static function fromRequeast(array $request): self
+    {
+        return new self(
+            user_id: auth()->user()->id,
+            heading: $request['heading'],
+            hero_image: $request['hero_image'],
+        );
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Actions\ServiceAction;
+use App\DTOs\ServiceDTO;
 use App\Http\Requests\ServiceRequest;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -30,9 +31,11 @@ final class ServiceController extends Controller
     }
     public function serviceStore(ServiceRequest $request,ServiceAction $action)
     {
-        $validated = $request->validated();
+        $data = $request->validated();
 
-        $service = $action->handle($validated);
+        $service = $action->handle(
+            ServiceDTO::fromRequest($data),
+        );
 
         return redirect()->route('services')->with('services_created','successfully created service');
     }

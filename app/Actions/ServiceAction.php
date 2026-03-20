@@ -4,16 +4,24 @@ declare(strict_types=1);
 
 namespace App\Actions;
 
+use App\DTOs\ServiceDTO;
 use App\Models\Service;
+use App\Repository\ServiceRepo;
+use App\Service\CreateService;
 
 final readonly class ServiceAction
 {
-    public function handle($data)
+    public function __construct(
+        private CreateService $createService,
+        private ServiceRepo $serviceRepo,
+    )
     {
-        return Service::create([
-            'user_id'=> auth()->id(),
-            'subtitle' => $data['subtitle'],
-            'description' => $data['description'],
-        ]);
+    }
+
+    public function handle(ServiceDTO $dto)
+    {
+        $service = $this->createService->serviceArray($dto);
+
+        return $this->serviceRepo->create($service);
     }
 }
