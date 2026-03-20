@@ -19,7 +19,7 @@
                     <p class="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.</p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
                         <a href="{{ route('login') }}" class="bg-indigo-500 bg-conic-180 from-indigo-600 via-indigo-50 to-indigo-600 rounded-xl py-2.5 px-4 text-slate-900 shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get started</a>
-                        <a href="#" class="text-sm/6 font-semibold text-white">Learn more <span aria-hidden="true">→</span></a>
+                        <a href="{{ route('services') }}" class="text-sm/6 font-semibold text-white">Learn more <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
             </div>
