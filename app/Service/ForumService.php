@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Service;
 
 use App\DTOs\ForumDTO;
@@ -9,7 +11,7 @@ use Illuminate\Http\UploadedFile;
 
 class ForumService
 {
-    public function forumArray(ForumDTO $dto,?UploadedFile $file = null): array
+    public function forumArray(ForumDTO $dto): array
     {
         $category = $dto->category;
 

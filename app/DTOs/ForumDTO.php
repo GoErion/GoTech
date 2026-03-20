@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DTOs;
 
 use App\Models\User;
 use Illuminate\Container\Attributes\CurrentUser;
 use Illuminate\Http\Request;
 
-class ForumDTO
+readonly class ForumDTO
 {
     /**
      * Create a new class instance.
