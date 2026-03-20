@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 
 use App\Actions\ForumAction;
 use App\Actions\UpdateForumAction;
+use App\DTOs\ForumDTO;
 use App\Enum\CategoryEnum;
 use App\Events\ForumCreated;
 use App\Http\Requests\ForumRequest;
 use App\Http\Requests\UpdateForumRequest;
 use App\Models\Forum;
+use App\Models\User;
+use Illuminate\Container\Attributes\CurrentUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -30,18 +33,16 @@ final class ForumController extends Controller
     }
     public function forumStore(ForumRequest $request,ForumAction $action)
     {
-        event(new ForumCreated());
-        $validated = $request->validated();
+        $data = $request->validated();
 
         if ($request->hasFile('image'))
         {
-            $validated['image']  = $request->file('image')->store('images','public');
+            $data['image']  = $request->file('image')->store('images','public');
         }
-        if (isset($validated['category']) && !($validated['category'] instanceof CategoryEnum))
-        {
-            $validated['category'] = CategoryEnum::from($validated['category']);
-        }
-        $forum = $action->handle($validated);
+
+        $forum = $action->handle(
+            ForumDTO::fromRequest($data),
+        );
 
         return redirect()->route('forum')->with('success', 'Forum created!');
     }
